@@ -19,10 +19,10 @@ class CreateQontoAttachmentsTable extends Migration
             $table->string('attachment_id');
             $table->bigInteger('qonto_transaction_id')->unsigned();
             $table->foreign('qonto_transaction_id')->references('id')->on('qonto_transactions');
-            $table->string('file_name');
-            $table->integer('file_size');
-            $table->string('file_content_type');
-            $table->text('url');
+            $table->string('file_name')->nullable();
+            $table->integer('file_size')->nullable();
+            $table->string('file_content_type')->nullable();
+            $table->text('url')->nullable();
             $table->timestamps();
         });
     }
