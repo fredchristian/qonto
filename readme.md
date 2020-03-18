@@ -12,7 +12,7 @@ Yep, [Qonto](https://qonto.eu/r/9o3w2g/) is a neobank, the ideal business accoun
 
 ## Requirements
 
-This package requires **PHP 7.2**, **Laravel 5.8** or higher and a database already set up in your Laravel project.
+This package requires **PHP 7.2**, **Laravel 7.0** or higher and a database already set up in your Laravel project.
 
 
 ## Installation
