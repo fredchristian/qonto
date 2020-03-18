@@ -23,7 +23,7 @@ class QontoApi
 
     public function transactions($slug, $iban, $current_page = null)
     {
-        $url = config('qonto.api.url') . 'transactions?slug=' . $slug . '&iban=' . $iban;
+        $url = config('qonto.api.url') . '/transactions?slug=' . $slug . '&iban=' . $iban;
         
         if(isset($current_page)) 
         {
@@ -33,10 +33,17 @@ class QontoApi
         return data_get($this->client->get($url), 'transactions');
     }
 
+    public function attachment($id)
+    {
+        $url = config('qonto.api.url') . '/attachments/' . $id;
+
+        return data_get($this->client->get($url), 'attachment');
+    }
+
 
     public function meta($slug, $iban)
     {
-        $url = config('qonto.api.url') . 'transactions?slug=' . $slug . '&iban=' . $iban;
+        $url = config('qonto.api.url') . '/transactions?slug=' . $slug . '&iban=' . $iban;
         
         return data_get($this->client->get($url), 'meta');
     }

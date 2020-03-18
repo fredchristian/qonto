@@ -14,11 +14,15 @@ class CreateQontoAttachmentsTable extends Migration
     public function up()
     {
         Schema::create('qonto_attachments', function (Blueprint $table) {
-             $table->bigIncrements('id');
+            $table->bigIncrements('id');
             $table->uuid('uuid');
             $table->string('attachment_id');
             $table->bigInteger('qonto_transaction_id')->unsigned();
             $table->foreign('qonto_transaction_id')->references('id')->on('qonto_transactions');
+            $table->string('file_name');
+            $table->integer('file_size');
+            $table->string('file_content_type');
+            $table->text('url');
             $table->timestamps();
         });
     }
