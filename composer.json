@@ -1,0 +1,43 @@
+{
+    "name": "brocorp/qonto",
+    "description": "Sync easily your Qonto bank account and transactions into your database",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brocorp",
+            "email": "support@brocorp.re",
+            "homepage": "https://www.brocorp.re"
+        }
+    ],
+    "homepage": "https://github.com/brocorp/qonto",
+    "keywords": [
+        "Laravel",
+        "Qonto"
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.5",
+        "php": "^7.2",
+        "illuminate/support": "~5.8.0|^6.0|^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Brocorp\\Qonto\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Brocorp\\Qonto\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Brocorp\\Qonto\\QontoServiceProvider"
+            ],
+            "aliases": {
+                "Qonto": "Brocorp\\Qonto\\Facades\\QontoApi"
+            }
+        }
+    }
+}
