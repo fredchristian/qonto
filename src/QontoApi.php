@@ -40,7 +40,6 @@ class QontoApi
         return data_get($this->client->get($url), 'attachment');
     }
 
-
     public function meta($slug, $iban)
     {
         $url = config('qonto.api.url') . '/transactions?slug=' . $slug . '&iban=' . $iban;

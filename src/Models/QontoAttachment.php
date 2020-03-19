@@ -15,14 +15,12 @@ class QontoAttachment extends Model
         self::creating(function ($model) { $model->uuid = (string) Str::uuid(); });
     }
 
-
     protected function sync($attachment, $id)
     {
         return self::updateOrCreate([ 'attachment_id' => $attachment ], [ 'qonto_transaction_id' => $id ]);
         
     }
     
-
     public function transaction() 
     { 
         return $this->belongsTo(QontoTransaction::class); 

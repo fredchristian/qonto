@@ -33,7 +33,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Brocorp\\Qonto\\QontoServiceProvider"
+                "Brocorp\\Qonto\\QontoServiceProvider",
+                "Brocorp\\Qonto\\QontoBladeServiceProvider"
             ],
             "aliases": {
                 "Qonto": "Brocorp\\Qonto\\Facades\\QontoApi"

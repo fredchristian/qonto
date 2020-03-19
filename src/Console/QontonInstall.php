@@ -17,7 +17,7 @@ class QontoInstall extends Command
 
         if ($this->confirm('Have you set your .ENV file with your Qonto credentials?')) {
             $this->line(' -> Publishing config/qonto.php');
-            $this->call('vendor:publish', ['--provider' => "Brocorp\Qonto\QontoServiceProvider", '--tag' => "config" ]);
+            $this->call('vendor:publish', ['--provider' => "Brocorp\Qonto\QontoServiceProvider", '--tag' => "qonto" ]);
             $this->line('');
 
             $this->line(' -> Creating tables in your database');

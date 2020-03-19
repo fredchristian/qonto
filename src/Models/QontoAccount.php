@@ -9,13 +9,11 @@ class QontoAccount extends Model
 {
     protected $guarded = [];
 
-
     public static function boot() 
     {
         parent::boot();
         self::creating(function ($model) { $model->uuid = (string) Str::uuid(); });
     }
-
 
     protected function sync($data) 
     {
@@ -31,7 +29,6 @@ class QontoAccount extends Model
             ]);
     }
     
-
     public function transactions() 
     { 
         return $this->hasMany(QontoTransaction::class); 

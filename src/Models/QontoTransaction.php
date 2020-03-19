@@ -11,13 +11,11 @@ class QontoTransaction extends Model
     protected $guarded = [];
     protected $dates = ['settled_at', 'emitted_at'];
 
-
     public static function boot() 
     {
         parent::boot();
         self::creating(function ($model) { $model->uuid = (string) Str::uuid(); });
     }
-
 
     protected function sync($id, $data)
     {
@@ -47,25 +45,21 @@ class QontoTransaction extends Model
             ]);
     }
 
-
     public function account() 
     { 
         return $this->belongsTo(QontoAccount::class);
     }
-
 
     public function attachments() 
     { 
         return $this->hasMany(QontoAttachment::class); 
     }
 
-
     public function setSettledAtAttribute($value)
     {
         $this->attributes['settled_at'] = Carbon::parse($value)->format('Y-m-d H:i:s');
     }
     
-
     public function setEmittedAtAttribute($value)
     {
         $this->attributes['emitted_at'] = Carbon::parse($value)->format('Y-m-d H:i:s');

@@ -19,7 +19,6 @@ class QontoServiceProvider extends ServiceProvider
         });
     }
 
-
     public function boot()
     {
         // loading migrations
@@ -27,7 +26,7 @@ class QontoServiceProvider extends ServiceProvider
 
         // publishing config
         if ($this->app->runningInConsole()) {
-            $this->publishes([__DIR__.'/../config/qonto.php' => config_path('qonto.php')], 'config');
+            $this->publishes([__DIR__.'/../config/qonto.php' => config_path('qonto.php')], 'qonto');
         }
         
         // register commands
