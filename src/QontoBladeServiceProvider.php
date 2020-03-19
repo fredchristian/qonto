@@ -2,7 +2,6 @@
 
 namespace Brocorp\Qonto;
 
-use Brocorp\Qonto\Models\QontoAccount;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,19 +16,19 @@ class QontoServiceProvider extends ServiceProvider
     {
         /* Accounts Blade Directives */
         Blade::directive('iban', function($slug) { 
-            return "<?php echo \App\QontoAccount::where('slug', $slug)->first()->iban; ?>";
+            return "<?php echo \Brocorp\Qonto\Models\QontoAccount::where('slug', $slug)->first()->iban; ?>";
         });
 
         Blade::directive('bic', function($slug) { 
-            return "<?php echo \App\QontoAccount::where('slug', $slug)->first()->bic; ?>";
+            return "<?php echo \Brocorp\Qonto\Models\QontoAccount::where('slug', $slug)->first()->bic; ?>";
         });
 
         Blade::directive('balance', function($slug) { 
-            return "<?php echo \App\QontoAccount::where('slug', $slug)->first()->balance; ?>";
+            return "<?php echo \Brocorp\Qonto\Models\QontoAccount::where('slug', $slug)->first()->balance; ?>";
         });
 
         Blade::directive('currency', function($slug) { 
-            return "<?php echo \App\QontoAccount::where('slug', $slug)->first()->currency; ?>";
+            return "<?php echo \Brocorp\Qonto\Models\QontoAccount::where('slug', $slug)->first()->currency; ?>";
         });
     }
 }
